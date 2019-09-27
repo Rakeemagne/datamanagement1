@@ -16,3 +16,5 @@ cd
 describe 
 count
 list
+
+//but need to save in 3 different formats! pls read ps instructions carefully!
