@@ -4,6 +4,8 @@ Data Management
 Dr. Okulicz-Kozaryn
 10/10/19
 
+//fpr future pls add here description of your research, model, vars
+
 * data comes from the department of education. I merged two sets - the first set is racial/ethnic demographics for select school districts in Camden County. The second set is other demographic information i.e. economic status, gender and so forth. 
 
 use "https://github.com/Rakeemagne/datamanagement1/blob/master/Camden%20County%20Demographics%20Data%201.dta?raw=true"
@@ -15,6 +17,7 @@ use "https://github.com/Rakeemagne/datamanagement1/blob/master/Camden%20County%2
 use "https://github.com/Rakeemagne/datamanagement1/blob/master/Camden%20County%20Demographics%20Data%201.dta?raw=true", replace
 
 merge 1:1 Name using "https://github.com/Rakeemagne/datamanagement1/blob/master/Camden%20County%20Demographics%20Data%202.dta?raw=true"
+//for future pls merge data comming from different sources!
 
 list
 *upon completing the merge, I check on the list to ensure my data was all listed
@@ -32,5 +35,6 @@ recode White2 (1/3=1) (4/8=2)
 tab White2
 
 collapse White Latinx Black, by(Name)
+//this doesnt make sense
 
 list
