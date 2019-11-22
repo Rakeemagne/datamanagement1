@@ -35,7 +35,7 @@ rename `x' `x'_1516
 global teacqual PERCERT_1516 PERFIRST_1516 PERABST_1516 WHTTEA_1516 BLKTEA_1516
 
 *We then summarize these variables to see what we have as we conduct our tests.
-
+ 
 sum $teacqual
 
 *Now, I want to conduct my explorations using a regression test. I want to see the impact of teacher quality on both math scores and lannguage arts scores on the PARCC exam for NJ students.
