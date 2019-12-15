@@ -36,7 +36,7 @@ achievement as per student test scores.
 there are more Black teachers employed in that charter school and/or district?
 2. Does a charter school and/or district produce higher test scores for Black 
 students when there are more Black teachers employed in that charter school and/
-or district? (WE'LL DISCUSS THIS MORE IN THE FINAL PROJECT)
+or district?
 */
 
 /*Hypothesis
@@ -44,7 +44,7 @@ or district? (WE'LL DISCUSS THIS MORE IN THE FINAL PROJECT)
 there are more Black teachers employed in that charter school and/or district 
 2. Charter schools and/or districts produce higher test scores for Black 
 students when there are more Black teachers employed in that charter school and/
-or district? (WE'LL DISCUSS THIS MORE IN THE FINAL PROJECT)
+or district? 
 */
 
 /*Data Description
@@ -288,4 +288,66 @@ Black teachers or Black administrators at a charter school, the percentage of st
 who are proficient or highly proficient in math and language arts is less than if 
 there were fewer teachers of color, Black teachers or Black administrators. Similar
 discipline data, we need to control for other variables to really see if the 
-relationships hold up*/ 
+relationships hold up. We can answer this question through a series of regression 
+tests. We first start with a look at discipline. We'll control for the following 
+variables: the percent of (1) Black students, (2) Latinx students, (3) disabled 
+students, (4) economically disadvantaged students, (5) student chronically absent 
+(6) certified teachers, (7) first year teachers, and (8) teachers absent 10 days 
+or more.*/ 
+
+reg BLKMISS BLKTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKMOSS BLKTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKFISS BLKTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKFOSS BLKTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKMDAY BLKTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKFDAY BLKTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+
+/*According to the tests that we ran, there is no relationship bewteen Black teachers
+and Black students suspended in school, out of school or who miss days from school
+due to of an out of school suspension. What did come through in the tests concerned
+Black students who missed days from school due to a suspension -- specifically,
+there was a relationship of statistical significance between schools with higher 
+percentages of Black students and those schools whose Black students miss school 
+due to a suspension. Now, we'll look at teachers of color followed by Black 
+administrators; controlling for the same variables.*/
+
+reg BLKMISS POCTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKMOSS POCTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKFISS POCTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKFOSS POCTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKMDAY POCTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKFDAY POCTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+
+reg BLKMISS BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKMOSS BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKFISS BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKFOSS BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKMDAY BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+reg BLKFDAY BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS 
+
+/*According to the tests that we ran, there was only one relationship of interest:
+there was a relationship between the percentage of Black administrators at 
+a charter school and the percentage Black male students who receive at least one 
+out of school suspension. This relationship was signifcant at the .01 level. No 
+other relationships existed between educators and suspended students. Now, we'll
+explore if any relationships exist between these educators and students 
+(schoolwide) with respect to student proficiency according to test score results.
+We'll control for the same variables as we did with discipline.*/
+
+reg SCHMAT BLKTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS
+reg SCHLAL BLKTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS
+
+reg SCHMAT POCTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS
+reg SCHLAL POCTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS
+
+reg SCHMAT BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS
+reg SCHLAL BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS
+
+/*According to the tests that we ran, there is no relationship bewteen the 
+percent of Black teachers, teachers of color or Black administrators and charter
+school student proficiency. The only relationships found were between the percent 
+of Black students or disabled students at a school and charter school student 
+proficiency. The results of our project found that there is minimal to no impact
+had on Black students who are suspended in charter schools students and on the percent 
+of charter sctudents proficient in math and English due to Black teachers, 
+teachers of color and Black administrators.*/
