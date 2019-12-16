@@ -1,3 +1,7 @@
+//it's late! again i was repeating over and over pls start early and ask questions!!
+
+//file names should not have spaces and never special chars such as () !!
+
 /*ps6 do file
 Randy R. Miller
 Data Management
@@ -25,12 +29,15 @@ a regression or two to understand exactly what the data tells us about our
 research questions
 */
 
+
+//this is good
 /*Research Goal
 This research is to explore the impact Black teachers have in charter schools 
 in two key areas: Black student discipline and Black student academic 
 achievement as per student test scores.
 */
 
+//great!!
 /*Research Questions
 1. Does a charter school and/or district suspend fewer black students when 
 there are more Black teachers employed in that charter school and/or district?
@@ -84,6 +91,9 @@ people.
 (https://njdatabook.rutgers.edu/) 
 */
 
+//where is the fifth dataset below? forgot to merge it?
+//and there should be 5 merges, not 4, so 6 datasets
+
 //---------------------------------- ps6 --------------------------------------
 
 /* I'll begin with merging all the the data to make one data set.*/
@@ -92,6 +102,9 @@ people.
 ///////          M E R G E   1		  ////////
 //////////////////////////////////////////////              
 
+//what in the world is the NUMBER???
+//did you just put all the data in excel and numberered rows??
+//if so, thats a huge mistake!! the whole point is to use code to do that!!
 use "https://github.com/Rakeemagne/datamanagement1/blob/master/1.1%20-%20Admin%20Data%20(NCES).dta?raw=true"
 merge 1:1 NUMBER using "https://github.com/Rakeemagne/datamanagement1/blob/master/1.2%20-%20Discipline%20Data%20(CRDC).dta?raw=true"
 drop _merge
@@ -342,6 +355,9 @@ reg SCHLAL POCTEA BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS
 
 reg SCHMAT BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS
 reg SCHLAL BLKADM BLKSTU LATSTU DISABL ECONDIS CA PERCERT PERFIRST PERABS
+
+//try outreg or estout as discussed in class, and see ucla stata regression webobook;
+//and https://www.princeton.edu/~otorres/Regression101.pdf
 
 /*According to the tests that we ran, there is no relationship bewteen the 
 percent of Black teachers, teachers of color or Black administrators and charter
